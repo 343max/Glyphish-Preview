@@ -20,8 +20,12 @@ $(document).ready(function ready () {
 	};
 
 	var retinaImage = function retinaImage(nonRetinaImage) {
-		return nonRetinaImage.replace(/\.png/, '@2x.png');
+		return nonRetinaImage.replace(/\.png$/, '@2x.png');
 	};
+
+	var selectedImage = function selectedImage(nonSelectedImage) {
+		return nonSelectedImage.replace(/\/Gray\//, '/Gray Selected/').replace(/\.png$/, '-selected.png');
+	}
 
 	icons = filteredIcons(icons);
 
@@ -31,10 +35,31 @@ $(document).ready(function ready () {
 
 		var div = $('<div>')
 			.css('background-image', backgroundImageValueForPath(path))
-			.addClass('thumbnail');
+			.addClass('thumbnail')
+			.attr('data-img', path);
 
 		tags.push(div);
 	});
 
-	$('body').append(tags);
+	var toggleSelected = function toggleSelected(tags) {
+		tags.each(function(index, el) {
+			var tag  = $(el);
+			var path = tag.attr('data-img');
+
+			if (!tag.hasClass('selected')) {
+				toggleSelected($('.selected'));
+				tag.addClass('selected');
+				tag.css('background-image', backgroundImageValueForPath(selectedImage(path)));
+			} else {
+				tag.removeClass('selected');
+				tag.css('background-image', backgroundImageValueForPath(path));
+			}
+		});
+	}
+
+	$('#thumbs').append(tags);
+
+	$('.thumbnail').click(function(e) {
+		toggleSelected($(e.target));
+	});
 });

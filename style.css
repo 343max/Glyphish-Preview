@@ -5,4 +5,5 @@ div.thumbnail {
 	background-repeat: no-repeat;
 	background-position: center center;
 	float: left;
+	cursor: pointer;
 }
