@@ -1,0 +1,8 @@
+
+div.thumbnail {
+	width: 100px;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: left;
+}
