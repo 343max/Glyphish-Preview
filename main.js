@@ -41,6 +41,14 @@ $(document).ready(function ready () {
 		tags.push(div);
 	});
 
+	var imagePreviewElement = function imagePreviewElement(path, label) {
+		return $('<div>')
+			.addClass('preview')
+			.append([
+				$('<div>').addClass('imagebox').append($('<img>').attr('src', path)),
+				$('<span>').text(label)]);
+	}
+
 	var toggleSelected = function toggleSelected(tags) {
 		tags.each(function(index, el) {
 			var tag  = $(el);
@@ -50,9 +58,22 @@ $(document).ready(function ready () {
 				toggleSelected($('.selected'));
 				tag.addClass('selected');
 				tag.css('background-image', backgroundImageValueForPath(selectedImage(path)));
+
+				var details = $('<div>').addClass('detail');
+
+				details.append([
+						imagePreviewElement(path, '@1x'),
+						imagePreviewElement(retinaImage(path), '@2x'),
+						imagePreviewElement(selectedImage(path), 'selected @1x'),
+						imagePreviewElement(retinaImage(selectedImage(path)), 'selected @2x')
+					]);
+
+				$('body').append(details);
 			} else {
 				tag.removeClass('selected');
 				tag.css('background-image', backgroundImageValueForPath(path));
+
+				$('.detail').remove();
 			}
 		});
 	}

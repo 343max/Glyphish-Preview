@@ -1,3 +1,13 @@
+body {
+	font-family: "Helvetica Neue";
+}
+
+#thumbs {
+	float: left;
+	width: auto;
+	margin-left: 0;
+	margin-right: 210px;
+}
 
 div.thumbnail {
 	width: 100px;
@@ -6,4 +16,16 @@ div.thumbnail {
 	background-position: center center;
 	float: left;
 	cursor: pointer;
+}
+
+.imagebox {
+	width: 130px;
+	height: 130px;
+}
+
+.detail {
+	min-height: 200px;
+	width: 200px;
+	position: fixed;
+	right: 10px;
 }
