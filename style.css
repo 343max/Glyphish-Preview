@@ -3,13 +3,15 @@ body {
 	margin: 0;
 	padding: 0;
 	padding-top: 40px;
+	color: #bbb;
+	text-align: center;
 }
 
 #thumbs {
 	float: left;
 	width: auto;
 	margin-left: 0;
-	margin-right: 210px;
+	margin-right: 150px;
 }
 
 div.thumbnail {
@@ -19,9 +21,7 @@ div.thumbnail {
 	background-position: center center;
 	float: left;
 	cursor: pointer;
-	color: #bbb;
 	font-size: 0.6em;
-	text-align: center;
 }
 
 div.thumbnail span {
@@ -33,10 +33,17 @@ div.thumbnail span {
 .imagebox {
 	width: 130px;
 	height: 130px;
+	position: relative;
+}
+
+.imagebox img {
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .detail {
-	width: 200px;
+	width: 130px;
 	position: fixed;
 	right: 10px;
 }
