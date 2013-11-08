@@ -1,5 +1,7 @@
 body {
 	font-family: "Helvetica Neue";
+	margin: 0;
+	padding: 0;
 }
 
 #thumbs {
@@ -19,7 +21,12 @@ div.thumbnail {
 	color: #bbb;
 	font-size: 0.6em;
 	text-align: center;
-	line-height: 170px;
+}
+
+div.thumbnail span {
+	display: block;
+	margin-top: 80px;
+	top: auto;
 }
 
 .imagebox {
@@ -32,4 +39,17 @@ div.thumbnail {
 	width: 200px;
 	position: fixed;
 	right: 10px;
+}
+
+#searchbar {
+	background-color: #eee;
+	padding: 10px;
+}
+
+#search {
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.3em;
 }

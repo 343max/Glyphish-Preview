@@ -45,7 +45,7 @@ $(document).ready(function ready () {
 			.css('background-image', backgroundImageValueForPath(path))
 			.addClass('thumbnail')
 			.attr('data-img', path)
-			.text(iconName(path));
+			.append($('<span>').text(iconName(path)));
 
 		tags.push(div);
 	});
@@ -94,7 +94,7 @@ $(document).ready(function ready () {
 		toggleSelected($(e.target));
 	});
 
-	$('#search').on('keyup', function(e) {
+	$('#search').on('search', function(e) {
 		var value = $(e.target).val();
 
 		$.each(tags, function(index, tag) {
@@ -105,4 +105,6 @@ $(document).ready(function ready () {
 			}
 		});
 	});
+
+	$('#search').focus();
 });
