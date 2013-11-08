@@ -16,6 +16,10 @@ div.thumbnail {
 	background-position: center center;
 	float: left;
 	cursor: pointer;
+	color: #bbb;
+	font-size: 0.6em;
+	text-align: center;
+	line-height: 170px;
 }
 
 .imagebox {

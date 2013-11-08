@@ -44,7 +44,8 @@ $(document).ready(function ready () {
 		var div = $('<div>')
 			.css('background-image', backgroundImageValueForPath(path))
 			.addClass('thumbnail')
-			.attr('data-img', path);
+			.attr('data-img', path)
+			.text(iconName(path));
 
 		tags.push(div);
 	});
@@ -70,6 +71,7 @@ $(document).ready(function ready () {
 				var details = $('<div>').addClass('detail');
 
 				details.append([
+						$('<h3>').text(iconName(path)),
 						imagePreviewElement(path, '@1x'),
 						imagePreviewElement(retinaImage(path), '@2x'),
 						imagePreviewElement(selectedImage(path), 'selected @1x'),
