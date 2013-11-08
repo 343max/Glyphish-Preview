@@ -11,7 +11,7 @@ How it works:
 
 - clone this repository to your disc
 - move your Icon directory to the cloned folder
-- `$~ sh ./create_icons_js.sh`
+- `~$ sh ./create_icons_js.sh`
 - open index.html
 
 Have fun!
