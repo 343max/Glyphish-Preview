@@ -25,7 +25,15 @@ $(document).ready(function ready () {
 
 	var selectedImage = function selectedImage(nonSelectedImage) {
 		return nonSelectedImage.replace(/\/Gray\//, '/Gray Selected/').replace(/\.png$/, '-selected.png');
+	};
+
+	var identifier = function identifier(path) {
+		return path.replace(/.*\//, '').replace(/\.png$/, '');
 	}
+
+	var iconName = function iconName(path) {
+		return identifier(path).replace(/-/g, ' ');
+	};
 
 	icons = filteredIcons(icons);
 
@@ -82,5 +90,17 @@ $(document).ready(function ready () {
 
 	$('.thumbnail').click(function(e) {
 		toggleSelected($(e.target));
+	});
+
+	$('#search').on('keyup', function(e) {
+		var value = $(e.target).val();
+
+		$.each(tags, function(index, tag) {
+			if (iconName(tag.attr('data-img')).indexOf(value) == -1) {
+				tag.hide();
+			} else {
+				tag.show();
+			}
+		});
 	});
 });
