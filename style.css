@@ -2,6 +2,7 @@ body {
 	font-family: "Helvetica Neue";
 	margin: 0;
 	padding: 0;
+	padding-top: 40px;
 }
 
 #thumbs {
@@ -35,7 +36,6 @@ div.thumbnail span {
 }
 
 .detail {
-	min-height: 200px;
 	width: 200px;
 	position: fixed;
 	right: 10px;
@@ -44,6 +44,9 @@ div.thumbnail span {
 #searchbar {
 	background-color: #eee;
 	padding: 10px;
+	position: fixed;
+	width: 100%;
+	top: 0;
 }
 
 #search {
